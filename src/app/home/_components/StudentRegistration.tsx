@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Upload, UserPlus, FileSpreadsheet, Check, X } from 'lucide-react';
-import { classData } from '@/app/mock/data';
+import { Upload, UserPlus, FileSpreadsheet, Check } from 'lucide-react';
+
 import { Input } from '@/components/Inputs';
 import { Select } from '@/components/Select';
 import { Textarea } from '@/components/TextArea';
 import { Label } from '@/components/Label';
+import { classData } from '@/mock/data';
 
 
 interface StudentForm {
@@ -54,7 +55,7 @@ const StudentRegistration: React.FC = () => {
       setForm(prev => ({
         ...prev,
         [parent]: {
-          ...prev[parent as keyof StudentForm],
+          ...(prev[parent as keyof StudentForm] as Record<string, any>),
           [child]: value
         }
       }));
