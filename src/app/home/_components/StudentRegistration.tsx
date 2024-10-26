@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Upload, UserPlus, FileSpreadsheet, Check, X } from 'lucide-react';
 import { classData } from '@/app/mock/data';
 import { Input } from '@/components/Inputs';
+import { Select } from '@/components/Select';
+import { Textarea } from '@/components/TextArea';
+import { Label } from '@/components/Label';
 
 
 interface StudentForm {
@@ -134,9 +137,9 @@ const StudentRegistration: React.FC = () => {
               <h3 className="text-lg font-medium text-gray-900 mb-4">Student Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor='FirstName'>
                     First Name
-                  </label>
+                  </Label>
                   <Input
                     type="text"
                     name="firstName"
@@ -146,9 +149,9 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor="LastName" >
                     Last Name
-                  </label>
+                  </Label>
                   <Input
                     type="text"
                     name="lastName"
@@ -158,9 +161,9 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor='dateOfBirth'>
                     Date of Birth
-                  </label>
+                  </Label>
                   <Input
                     type="date"
                     name="dateOfBirth"
@@ -170,33 +173,31 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor='bloodType' >
                     Blood Type
-                  </label>
-                  <select
-                    name="bloodType"
+                  </Label>
+                  <Select
                     value={form.bloodType}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
 
                   >
                     <option value="">Select blood type</option>
                     {bloodTypes.map(type => (
                       <option key={type} value={type}>{type}</option>
                     ))}
-                  </select>
+                  </Select>
+
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor="Allergies" >
                     Allergies
-                  </label>
-                  <textarea
+                  </Label>
+                  <Textarea
                     name="allergies"
                     value={form.allergies}
                     onChange={handleInputChange}
                     rows={2}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="List any allergies or write 'None' if not applicable"
                   />
                 </div>
@@ -208,9 +209,9 @@ const StudentRegistration: React.FC = () => {
               <h3 className="text-lg font-medium text-gray-900 mb-4">Parent Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor='FatherName' >
                     Father's Name
-                  </label>
+                  </Label>
                   <Input
                     type="text"
                     name="parentInfo.fatherName"
@@ -221,10 +222,11 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label htmlFor="fatherPhone">
                     Father's Phone
-                  </label>
+                  </Label>
                   <Input
+
                     type="tel"
                     name="parentInfo.fatherPhone"
                     value={form.parentInfo.fatherPhone}
@@ -233,9 +235,9 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label >
                     Mother's Name
-                  </label>
+                  </Label>
                   <Input
                     type="text"
                     name="parentInfo.motherName"
@@ -245,9 +247,9 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label >
                     Mother's Phone
-                  </label>
+                  </Label>
                   <Input
                     type="tel"
                     name="parentInfo.motherPhone"
@@ -264,9 +266,9 @@ const StudentRegistration: React.FC = () => {
               <h3 className="text-lg font-medium text-gray-900 mb-4">Class Assignment</h3>
               <div className="grid grid-cols-1 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label >
                     Email
-                  </label>
+                  </Label>
                   <Input
                     type="email"
                     name="email"
@@ -276,9 +278,9 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <Label >
                     Class
-                  </label>
+                  </Label>
                   <select
                     name="classId"
                     value={form.classId}
@@ -321,7 +323,7 @@ const StudentRegistration: React.FC = () => {
             <Upload className="h-12 w-12 mx-auto text-gray-400 mb-4" />
             <p className="text-gray-600 mb-2">
               Drag and drop your spreadsheet here, or{' '}
-              <label className="text-indigo-600 hover:text-indigo-700 cursor-pointer">
+              <Label >
                 browse
                 <Input
                   type="file"
@@ -334,7 +336,7 @@ const StudentRegistration: React.FC = () => {
                     }
                   }}
                 />
-              </label>
+              </Label>
             </p>
             <p className="text-sm text-gray-500">
               Supported formats: .xlsx, .xls, .csv
