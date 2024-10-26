@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Upload, UserPlus, FileSpreadsheet, Check, X } from 'lucide-react';
 import { classData } from '@/app/mock/data';
 import { Input } from '@/components/Inputs';
+import { Select } from '@/components/Select';
 
 
 interface StudentForm {
@@ -173,19 +174,18 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Blood Type
                   </label>
-                  <select
-                    name="bloodType"
+                  <Select
                     value={form.bloodType}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
 
                   >
                     <option value="">Select blood type</option>
                     {bloodTypes.map(type => (
                       <option key={type} value={type}>{type}</option>
                     ))}
-                  </select>
+                  </Select>
+
                 </div>
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
