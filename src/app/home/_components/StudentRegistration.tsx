@@ -55,7 +55,7 @@ const StudentRegistration: React.FC = () => {
       setForm(prev => ({
         ...prev,
         [parent]: {
-          ...(prev[parent as keyof StudentForm] as Record<string, any>),
+          ...(prev[parent as keyof StudentForm] as Record<string, string>),
           [child]: value
         }
       }));
@@ -211,7 +211,7 @@ const StudentRegistration: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor='FatherName' >
-                    Father's Name
+                    Father&apos;s Name
                   </Label>
                   <Input
                     type="text"
@@ -224,7 +224,7 @@ const StudentRegistration: React.FC = () => {
                 </div>
                 <div>
                   <Label htmlFor="fatherPhone">
-                    Father's Phone
+                    Father&apos;s Phone
                   </Label>
                   <Input
 
@@ -237,7 +237,7 @@ const StudentRegistration: React.FC = () => {
                 </div>
                 <div>
                   <Label >
-                    Mother's Name
+                    Mother&apos;s Name
                   </Label>
                   <Input
                     type="text"
@@ -249,7 +249,7 @@ const StudentRegistration: React.FC = () => {
                 </div>
                 <div>
                   <Label >
-                    Mother's Phone
+                    Mother&apos;s Phone
                   </Label>
                   <Input
                     type="tel"

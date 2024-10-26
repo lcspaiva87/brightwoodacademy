@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { Calendar, Users, GraduationCap, Menu, Clock } from 'lucide-react';
 import Sidebar from '@/components/Sidebar';
-import { classData } from '../mock/data';
 import ClassSchedule from './_components/ClassSchedule';
 import StudentRegistration from './_components/StudentRegistration';
 import TeacherRegistration from './_components/TeacherRegistration';
+import { classData } from '@/mock/data';
 
 
 export default function HomePAge() {

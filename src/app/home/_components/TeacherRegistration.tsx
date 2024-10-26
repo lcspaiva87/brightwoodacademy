@@ -38,7 +38,7 @@ const TeacherRegistration: React.FC = () => {
       setForm(prev => ({
         ...prev,
         [parent]: {
-          ...(prev[parent as keyof TeacherForm] as Record<string, any>),
+          ...(prev[parent as keyof TeacherForm] as Record<string, string>),
           [child]: value
         }
       }));
