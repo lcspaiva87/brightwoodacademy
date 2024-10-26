@@ -60,7 +60,6 @@ const TeacherRegistration: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
     setTimeout(() => {
       setSuccessMessage('Teacher registered successfully!');
       setForm(initialFormState);

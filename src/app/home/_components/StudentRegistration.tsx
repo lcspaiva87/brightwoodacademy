@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Upload, UserPlus, FileSpreadsheet, Check, X } from 'lucide-react';
 import { classData } from '@/app/mock/data';
+import { Input } from '@/components/Inputs';
 
 
 interface StudentForm {
@@ -91,7 +92,6 @@ const StudentRegistration: React.FC = () => {
       setTimeout(() => setSuccessMessage(''), 3000);
     }
   };
-
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white rounded-lg shadow-md p-6">
@@ -130,7 +130,6 @@ const StudentRegistration: React.FC = () => {
 
         {!isImportMode ? (
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Student Information */}
             <div>
               <h3 className="text-lg font-medium text-gray-900 mb-4">Student Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -138,12 +137,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     First Name
                   </label>
-                  <input
+                  <Input
                     type="text"
                     name="firstName"
                     value={form.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -151,12 +149,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Last Name
                   </label>
-                  <input
+                  <Input
                     type="text"
                     name="lastName"
                     value={form.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -164,12 +161,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Date of Birth
                   </label>
-                  <input
+                  <Input
                     type="date"
                     name="dateOfBirth"
                     value={form.dateOfBirth}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -181,8 +177,9 @@ const StudentRegistration: React.FC = () => {
                     name="bloodType"
                     value={form.bloodType}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+
                   >
                     <option value="">Select blood type</option>
                     {bloodTypes.map(type => (
@@ -214,12 +211,12 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Father's Name
                   </label>
-                  <input
+                  <Input
                     type="text"
                     name="parentInfo.fatherName"
                     value={form.parentInfo.fatherName}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg "
                     required
                   />
                 </div>
@@ -227,12 +224,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Father's Phone
                   </label>
-                  <input
+                  <Input
                     type="tel"
                     name="parentInfo.fatherPhone"
                     value={form.parentInfo.fatherPhone}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -240,12 +236,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Mother's Name
                   </label>
-                  <input
+                  <Input
                     type="text"
                     name="parentInfo.motherName"
                     value={form.parentInfo.motherName}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -253,12 +248,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Mother's Phone
                   </label>
-                  <input
+                  <Input
                     type="tel"
                     name="parentInfo.motherPhone"
                     value={form.parentInfo.motherPhone}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -273,12 +267,11 @@ const StudentRegistration: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Email
                   </label>
-                  <input
+                  <Input
                     type="email"
                     name="email"
                     value={form.email}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
                   />
                 </div>
@@ -290,8 +283,9 @@ const StudentRegistration: React.FC = () => {
                     name="classId"
                     value={form.classId}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+
                   >
                     <option value="">Select a class</option>
                     {classData.map((cls) => (
@@ -329,7 +323,7 @@ const StudentRegistration: React.FC = () => {
               Drag and drop your spreadsheet here, or{' '}
               <label className="text-indigo-600 hover:text-indigo-700 cursor-pointer">
                 browse
-                <input
+                <Input
                   type="file"
                   className="hidden"
                   accept=".xlsx,.xls,.csv"
