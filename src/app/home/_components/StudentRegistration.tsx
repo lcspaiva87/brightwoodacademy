@@ -137,7 +137,7 @@ const StudentRegistration: React.FC = () => {
               <h3 className="text-lg font-medium text-gray-900 mb-4">Student Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label >
+                  <Label htmlFor='FirstName'>
                     First Name
                   </Label>
                   <Input
@@ -149,7 +149,7 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <Label >
+                  <Label htmlFor="LastName" >
                     Last Name
                   </Label>
                   <Input
@@ -161,7 +161,7 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <Label>
+                  <Label htmlFor='dateOfBirth'>
                     Date of Birth
                   </Label>
                   <Input
@@ -173,7 +173,7 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <Label >
+                  <Label htmlFor='bloodType' >
                     Blood Type
                   </Label>
                   <Select
@@ -190,7 +190,7 @@ const StudentRegistration: React.FC = () => {
 
                 </div>
                 <div className="md:col-span-2">
-                  <Label >
+                  <Label htmlFor="Allergies" >
                     Allergies
                   </Label>
                   <Textarea
@@ -209,7 +209,7 @@ const StudentRegistration: React.FC = () => {
               <h3 className="text-lg font-medium text-gray-900 mb-4">Parent Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label>
+                  <Label htmlFor='FatherName' >
                     Father's Name
                   </Label>
                   <Input
@@ -222,10 +222,11 @@ const StudentRegistration: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <Label >
+                  <Label htmlFor="fatherPhone">
                     Father's Phone
                   </Label>
                   <Input
+
                     type="tel"
                     name="parentInfo.fatherPhone"
                     value={form.parentInfo.fatherPhone}
