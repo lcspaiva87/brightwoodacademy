@@ -1,11 +1,11 @@
 import React from 'react';
-import { Home, BookOpen, UserCircle, Settings, Calendar, X, UserPlus, Users } from 'lucide-react';
+import { Home, BookOpen, UserCircle, Settings, Calendar, X, UserPlus, Users, Newspaper, ListFilter } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  onViewChange: (view: 'classes' | 'registration' | 'teacher-registration') => void;
-  currentView: 'classes' | 'registration' | 'teacher-registration';
+  onViewChange: (view: 'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar') => void;
+  currentView: 'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar';
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, currentView }) => {
@@ -14,8 +14,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, curren
     { icon: BookOpen, label: 'Classes', view: 'classes' },
     { icon: UserPlus, label: 'Student Registration', view: 'registration' },
     { icon: Users, label: 'Teacher Registration', view: 'teacher-registration' },
+    { icon: Newspaper, label: 'News Registration', view: 'news' },
+    { icon: ListFilter, label: 'News Overview', view: 'news-overview' },
+    { icon: Calendar, label: 'Calendar', view: 'calendar' },
     { icon: UserCircle, label: 'Teachers', view: 'teachers' },
-    { icon: Calendar, label: 'Schedule', view: 'schedule' },
     { icon: Settings, label: 'Settings', view: 'settings' },
   ];
 
@@ -53,13 +55,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, curren
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (item.view === 'classes' || item.view === 'registration' || item.view === 'teacher-registration') {
+                  if (item.view === 'classes' || item.view === 'registration' || item.view === 'teacher-registration' || item.view === 'news' || item.view === 'news-overview' || item.view === 'calendar') {
                     onViewChange(item.view);
                   }
                 }}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${currentView === item.view
-                    ? 'bg-indigo-50 text-indigo-600'
-                    : 'text-gray-600 hover:bg-gray-50'
+                  ? 'bg-indigo-50 text-indigo-600'
+                  : 'text-gray-600 hover:bg-gray-50'
                   }`}
               >
                 <item.icon className={`h-5 w-5 ${currentView === item.view ? 'text-indigo-600' : 'text-gray-400'}`} />

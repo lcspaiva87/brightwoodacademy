@@ -6,13 +6,15 @@ import ClassSchedule from './_components/ClassSchedule';
 import StudentRegistration from './_components/StudentRegistration';
 import TeacherRegistration from './_components/TeacherRegistration';
 import { classData } from '@/mock/data';
+import NewsRegistration from './_components/NewsRegistration';
+import NewsOverview from './_components/NewsOverview';
+import CalendarView from './_components/CalendarView';
 
 
 export default function HomePAge() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [currentView, setCurrentView] = useState<'classes' | 'registration' | 'teacher-registration'>('classes');
-
-  const handleViewChange = (view: 'classes' | 'registration' | 'teacher-registration') => {
+  const [currentView, setCurrentView] = useState<'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar'>('classes');
+  const handleViewChange = (view: 'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar') => {
     setCurrentView(view);
   };
 
@@ -72,8 +74,10 @@ export default function HomePAge() {
             </div>
           )}
           {currentView === 'registration' && <StudentRegistration />}
-
           {currentView === 'teacher-registration' && <TeacherRegistration />}
+          {currentView === 'news' && <NewsRegistration />}
+          {currentView === 'news-overview' && <NewsOverview />}
+          {currentView === 'calendar' && <CalendarView />}
         </main>
       </div>
     </div>
