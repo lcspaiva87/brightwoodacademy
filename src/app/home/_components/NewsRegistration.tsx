@@ -59,7 +59,7 @@ const NewsRegistration: React.FC = () => {
     if (name === 'targetType') {
       setForm(prev => ({
         ...prev,
-        [name]: value,
+        [name]: value as 'all' | 'class' | 'student',
         targetClass: '',
         targetStudents: []
       }));
