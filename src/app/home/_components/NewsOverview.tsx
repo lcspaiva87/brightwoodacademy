@@ -91,7 +91,7 @@ const NewsOverview: React.FC = () => {
   };
 
   const handleDelete = (id: string) => {
-    // Implement delete functionality
+
     console.log('Delete news with id:', id);
   };
 
