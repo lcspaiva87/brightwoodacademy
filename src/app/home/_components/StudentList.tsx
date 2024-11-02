@@ -140,6 +140,7 @@ const StudentList: React.FC = () => {
               <div className="relative">
                 <select
                   value={statusFilter}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   onChange={(e) => setStatusFilter(e.target.value as any)}
                   className="w-full appearance-none pl-10 pr-8 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                 >
@@ -311,6 +312,7 @@ const StudentList: React.FC = () => {
                     </label>
                     <select
                       value={editingStudent.status}
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       onChange={(e) => setEditingStudent({ ...editingStudent, status: e.target.value as any })}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     >
@@ -335,7 +337,7 @@ const StudentList: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Father's Name
+                          Father&lsquo;s Name
                         </label>
                         <input
                           type="text"
@@ -350,7 +352,7 @@ const StudentList: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Father's Phone
+                          Father&#39;s Phone
                         </label>
                         <input
                           type="tel"
@@ -365,7 +367,7 @@ const StudentList: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Mother's Name
+                          Mother&lsquo;s Name
                         </label>
                         <input
                           type="text"
@@ -380,7 +382,7 @@ const StudentList: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          Mother's Phone
+                          Mother&apos;s Phone
                         </label>
                         <input
                           type="tel"

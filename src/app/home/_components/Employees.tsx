@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, ChevronDown, Plus, Pencil, Trash2, Mail, Phone, MapPin, Building2, Check, X } from 'lucide-react';
+import { Search, Filter, ChevronDown, Plus, Pencil, Trash2, Mail, Phone, MapPin, Building2, Check } from 'lucide-react';
 
 interface Employee {
   id: string;
@@ -210,6 +210,7 @@ const Employees: React.FC = () => {
             <label className="block text-sm font-medium text-gray-700">Employment Type</label>
             <select
               value={formData.employmentType}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               onChange={(e) => setFormData(prev => ({ ...prev, employmentType: e.target.value as any }))}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
               required
@@ -263,6 +264,7 @@ const Employees: React.FC = () => {
             <label className="block text-sm font-medium text-gray-700">Status</label>
             <select
               value={formData.status}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value as any }))}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
               required

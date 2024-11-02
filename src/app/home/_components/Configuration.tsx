@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save, Settings, Calendar, Bell, Mail, Shield, Building, Clock, Check, AlertTriangle } from 'lucide-react';
+import { Save, Settings, Calendar, Bell, Mail, Shield, Building, Check, AlertTriangle } from 'lucide-react';
 
 interface ConfigForm {
   schoolInfo: {
@@ -74,6 +74,7 @@ const Configuration: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [hasChanges, setHasChanges] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleInputChange = (section: keyof ConfigForm, field: string, value: any) => {
     setConfig(prev => ({
       ...prev,
@@ -162,8 +163,8 @@ const Configuration: React.FC = () => {
           <button
             onClick={() => setActiveTab('school')}
             className={`px-6 py-3 text-sm font-medium border-b-2 ${activeTab === 'school'
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-indigo-500 text-indigo-600'
+              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
           >
             <Building className="h-4 w-4 inline-block mr-2" />
@@ -172,8 +173,8 @@ const Configuration: React.FC = () => {
           <button
             onClick={() => setActiveTab('academic')}
             className={`px-6 py-3 text-sm font-medium border-b-2 ${activeTab === 'academic'
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-indigo-500 text-indigo-600'
+              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
           >
             <Calendar className="h-4 w-4 inline-block mr-2" />
@@ -182,8 +183,8 @@ const Configuration: React.FC = () => {
           <button
             onClick={() => setActiveTab('notifications')}
             className={`px-6 py-3 text-sm font-medium border-b-2 ${activeTab === 'notifications'
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-indigo-500 text-indigo-600'
+              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
           >
             <Bell className="h-4 w-4 inline-block mr-2" />
@@ -192,8 +193,8 @@ const Configuration: React.FC = () => {
           <button
             onClick={() => setActiveTab('security')}
             className={`px-6 py-3 text-sm font-medium border-b-2 ${activeTab === 'security'
-                ? 'border-indigo-500 text-indigo-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              ? 'border-indigo-500 text-indigo-600'
+              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
           >
             <Shield className="h-4 w-4 inline-block mr-2" />
@@ -560,8 +561,8 @@ const Configuration: React.FC = () => {
               type="submit"
               disabled={!hasChanges}
               className={`px-6 py-2 rounded-lg flex items-center gap-2 ${hasChanges
-                  ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                  : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                 }`}
             >
               <Save className="h-4 w-4" />

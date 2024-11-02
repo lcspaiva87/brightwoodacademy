@@ -30,7 +30,7 @@ export default function SignInPage() {
       } else {
         setError('Invalid email or password');
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
@@ -134,7 +134,7 @@ export default function SignInPage() {
         </div>
 
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <a href="#" className="text-indigo-600 hover:text-indigo-700 font-medium">
             Contact administrator
           </a>

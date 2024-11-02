@@ -1,11 +1,11 @@
 import React from 'react';
-import { Home, BookOpen, UserCircle, Settings, Calendar, X, UserPlus, Users, Newspaper, ListFilter, GraduationCap, Edit3, Cog, Building2 } from 'lucide-react';
+import { Home, BookOpen, Calendar, X, UserPlus, Users, Newspaper, ListFilter, Edit3, Cog, Building2 } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
   onViewChange: (view: 'classes' | 'registration' | 'students' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees') => void;
-  currentView: 'classes' | 'registration' | 'students' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees';
+  currentView: 'classes' | 'registration' | 'students' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees' | 'students-list';
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, currentView }) => {
@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, curren
     { icon: BookOpen, label: 'Classes', view: 'classes' },
     { icon: Edit3, label: 'Class Management', view: 'class-management' },
     { icon: UserPlus, label: 'Student Registration', view: 'registration' },
-    { icon: UserPlus, label: 'Student List', view: 'students' },
+    { icon: UserPlus, label: 'Student List', view: 'students-list' },
     { icon: Users, label: 'Teachers', view: 'teachers' },
     { icon: UserPlus, label: 'Teacher Registration', view: 'teacher-registration' },
     { icon: Building2, label: 'Employees', view: 'employees' },
@@ -22,6 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, curren
     { icon: ListFilter, label: 'News Overview', view: 'news-overview' },
     { icon: Calendar, label: 'Calendar', view: 'calendar' },
     { icon: Cog, label: 'Settings', view: 'settings' },
+
   ];
 
   return (
