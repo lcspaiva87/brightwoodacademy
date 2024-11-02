@@ -1,20 +1,27 @@
-'use client';
+'use client'
 import React, { useState } from 'react';
-import { Calendar, Users, GraduationCap, Menu, Clock } from 'lucide-react';
+import { Calendar, Users, Clock, GraduationCap, Menu } from 'lucide-react';
 import Sidebar from '@/components/Sidebar';
 import ClassSchedule from './_components/ClassSchedule';
 import StudentRegistration from './_components/StudentRegistration';
+import StudentList from './_components/StudentList';
 import TeacherRegistration from './_components/TeacherRegistration';
-import { classData } from '@/mock/data';
+import TeacherList from './_components/TeacherList';
 import NewsRegistration from './_components/NewsRegistration';
 import NewsOverview from './_components/NewsOverview';
 import CalendarView from './_components/CalendarView';
+import ClassManagement from './_components/ClassManagement';
+import Configuration from './_components/Configuration';
+import Employees from './_components/Employees';
+import { classData } from '@/mock/data';
 
 
-export default function HomePAge() {
+function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [currentView, setCurrentView] = useState<'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar'>('classes');
-  const handleViewChange = (view: 'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar') => {
+  const [currentView, setCurrentView] = useState<'classes' | 'registration' | 'students' | 'students-list' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees'>('classes');
+
+
+  const handleViewChange = (view: 'classes' | 'registration' | 'students' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees') => {
     setCurrentView(view);
   };
 
@@ -74,13 +81,19 @@ export default function HomePAge() {
             </div>
           )}
           {currentView === 'registration' && <StudentRegistration />}
+          {currentView === 'students' && <StudentList />}
           {currentView === 'teacher-registration' && <TeacherRegistration />}
+          {currentView === 'teachers' && <TeacherList />}
           {currentView === 'news' && <NewsRegistration />}
           {currentView === 'news-overview' && <NewsOverview />}
           {currentView === 'calendar' && <CalendarView />}
+          {currentView === 'class-management' && <ClassManagement />}
+          {currentView === 'settings' && <Configuration />}
+          {currentView === 'employees' && <Employees />}
         </main>
       </div>
     </div>
   );
 }
 
+export default App;

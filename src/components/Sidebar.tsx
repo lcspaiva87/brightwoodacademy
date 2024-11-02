@@ -1,24 +1,27 @@
 import React from 'react';
-import { Home, BookOpen, UserCircle, Settings, Calendar, X, UserPlus, Users, Newspaper, ListFilter } from 'lucide-react';
+import { Home, BookOpen, UserCircle, Settings, Calendar, X, UserPlus, Users, Newspaper, ListFilter, GraduationCap, Edit3, Cog, Building2 } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  onViewChange: (view: 'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar') => void;
-  currentView: 'classes' | 'registration' | 'teacher-registration' | 'news' | 'news-overview' | 'calendar';
+  onViewChange: (view: 'classes' | 'registration' | 'students' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees') => void;
+  currentView: 'classes' | 'registration' | 'students' | 'teacher-registration' | 'teachers' | 'news' | 'news-overview' | 'calendar' | 'class-management' | 'settings' | 'employees';
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, currentView }) => {
   const menuItems = [
     { icon: Home, label: 'Dashboard', view: 'dashboard' },
     { icon: BookOpen, label: 'Classes', view: 'classes' },
+    { icon: Edit3, label: 'Class Management', view: 'class-management' },
     { icon: UserPlus, label: 'Student Registration', view: 'registration' },
-    { icon: Users, label: 'Teacher Registration', view: 'teacher-registration' },
+    { icon: UserPlus, label: 'Student List', view: 'students' },
+    { icon: Users, label: 'Teachers', view: 'teachers' },
+    { icon: UserPlus, label: 'Teacher Registration', view: 'teacher-registration' },
+    { icon: Building2, label: 'Employees', view: 'employees' },
     { icon: Newspaper, label: 'News Registration', view: 'news' },
     { icon: ListFilter, label: 'News Overview', view: 'news-overview' },
     { icon: Calendar, label: 'Calendar', view: 'calendar' },
-    { icon: UserCircle, label: 'Teachers', view: 'teachers' },
-    { icon: Settings, label: 'Settings', view: 'settings' },
+    { icon: Cog, label: 'Settings', view: 'settings' },
   ];
 
   return (
@@ -55,7 +58,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onViewChange, curren
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (item.view === 'classes' || item.view === 'registration' || item.view === 'teacher-registration' || item.view === 'news' || item.view === 'news-overview' || item.view === 'calendar') {
+                  if (item.view === 'classes' || item.view === 'registration' || item.view === 'students' ||
+                    item.view === 'teacher-registration' || item.view === 'teachers' || item.view === 'news' ||
+                    item.view === 'news-overview' || item.view === 'calendar' || item.view === 'class-management' ||
+                    item.view === 'settings' || item.view === 'employees') {
                     onViewChange(item.view);
                   }
                 }}
